@@ -1,0 +1,49 @@
+DCJ_dosage_sensitive simulating program
+=================
+=================
+
+Jie Lv (Collaborating with Paul Havlak and Nik Putnam)
+Rice University
+Putnam Lab
+jie.lv@rice.edu
+
+
+RUNNING
+============
+
+Step 1 - generate input genome
+------------------------
+generate_genome_files.py 
+
+DESCRIPTION:  
+  read starting genome from the first two columns of the synin file, and store the whole genome into a new   directory. Each chromosome is formatted as a string and stored into a separated file under this directory.
+
+INPUT: 
+  sysnin file from STDIN    
+
+OUTPUT:  
+  formatted chromosomes stored in separated files in a directory
+
+EXECUTING EXAMPLE:
+
+  cat "your_synin_file" | python generate_genome_files.py "path_to_your_target_directory"
+
+
+Step 2 - Perform simulation
+-------------------------
+DCJ_ds.py
+
+DESCRIPTION:  
+  Given a stating genome, the number of rearrangement you want to perform and the percentage of dosage sensitive genes across the whole genome, it print out the simulated genome in synin file format.
+
+INPUT:  
+  It accept three arguments in order: 
+  number of DCJ moves you want perform n
+  percentage of dosage sensitive genes u%
+  path to the input genome directory   d 
+
+OUTPUT: 
+  simulated genome formatted as sysnin file to STDOUT
+
+EXECUTING EXAMPLE:
+  python DCJ_ds.py n u d
